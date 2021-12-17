@@ -6,5 +6,17 @@ steps:
         terraform init
     id: terraform init 
     entrypoint: sh
+    args:
+      - '-c'
+      - |
+        terraform plan
+    id: terraform plan 
+    entrypoint: sh
+    args:
+      - '-c'
+      - |
+        terraform apply --auto-approve
+    id: terraform apply --auto-approve
+    entrypoint: sh
 options:
   logging: CLOUD_LOGGING_ONLY
