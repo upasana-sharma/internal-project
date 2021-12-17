@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_compute_instance" "cb_test_vm" {
-  name         = "cb-test-vm"
+  name         = "cb-test-vms"
   machine_type = "e2-medium"
   zone         = "asia-south1-b"
   project = "searce-playground"
