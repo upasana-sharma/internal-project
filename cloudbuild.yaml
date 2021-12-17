@@ -1,0 +1,11 @@
+steps:
+  - name: 'hashicorp/terraform:1.0.0'
+    args:
+      - '-c'
+      - |
+        cd /
+        terraform init
+    id: terraform init 
+    entrypoint: sh
+options:
+  logging: CLOUD_LOGGING_ONLY
