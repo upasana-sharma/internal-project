@@ -3,7 +3,6 @@ steps:
     args:
       - '-c'
       - |
-        cd /
         terraform init
     id: terraform init 
     entrypoint: sh
