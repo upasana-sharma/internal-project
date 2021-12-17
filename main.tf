@@ -1,3 +1,8 @@
+provider "google" {
+  project = "searce-playground"
+  
+}
+
 resource "google_compute_instance" "cb_test_vm" {
   name         = "cb-test-vm"
   machine_type = "e2-medium"
@@ -9,6 +14,7 @@ resource "google_compute_instance" "cb_test_vm" {
     }
   }
   network_interface {
-    network = "jay-test-vpc"
+    network = "anilgs-psc-vpc"
+    subnetwork = "abhivaidya-psc-vpc-asia-south1-app-engine-subnet"
   }
 }
