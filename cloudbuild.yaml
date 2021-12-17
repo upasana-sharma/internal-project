@@ -6,12 +6,14 @@ steps:
         terraform init
     id: terraform init 
     entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
         terraform plan
     id: terraform plan 
     entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.0'
     args:
       - '-c'
       - |
