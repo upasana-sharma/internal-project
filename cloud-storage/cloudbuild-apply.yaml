@@ -1,0 +1,44 @@
+steps:
+  - name: 'hashicorp/terraform:1.0.4'
+    dir: cloud-storage
+    args:
+      - '-c'
+      - |
+        terraform init
+    id: terraform init
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.4'
+    dir: cloud-storage
+    args:
+      - '-c'
+      - |
+        terraform fmt
+    id: terraform fmt
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.4'
+    dir: cloud-storage
+    args:
+      - '-c'
+      - |
+        terraform validate
+    id: terraform validate
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.4'
+    dir: cloud-storage
+    args:
+      - '-c'
+      - |
+        terraform plan
+    id: terraform plan
+    entrypoint: sh
+  - name: 'hashicorp/terraform:1.0.4'
+    dir: cloud-storage
+    args:
+      - '-c'
+      - |
+        terraform apply -input=false -auto-approve
+    id: terraform apply
+    entrypoint: sh
+logsBucket: 'gs://fk-landingzone-p-gcs-ass1-cb-logs-lt22'
+options:
+  logging: GCS_ONLY
